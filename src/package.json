@@ -3,7 +3,7 @@
   "version": "1.2.4",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/osahner/ngx-show-hide-password.git"
+    "url": "git+https://github.com/kkcool6/ngx-show-hide-password.git"
   },
   "author": {
     "name": "Oliver Sahner",
@@ -17,9 +17,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/osahner/ngx-show-hide-password/issues"
+    "url": "https://github.com/kkcool6/ngx-show-hide-password/issues"
   },
-  "homepage": "https://github.com/osahner/ngx-show-hide-password#readme",
+  "homepage": "https://github.com/kkcool6/ngx-show-hide-password#readme",
   "main": "ngx-show-hide-password.umd.js",
   "module": "ngx-show-hide-password.js",
   "jsnext:main": "ngx-show-hide-password.js",
