@@ -10,23 +10,7 @@ import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
  */
 @Component({
   selector: 'show-hide-password',
-  template: `
-    <ng-content></ng-content>
-    <div class="input-group-append">
-      <button *ngIf="icon" class="btn btn-outline-secondary" type="button" (click)="toggleShow($event)"
-        [attr.label]="isHidden ? 'Show password' : 'Hide password'" [ngSwitch]="icon">
-        <span *ngSwitchCase="'entypo'" class="icon"
-          [ngClass]="{'icon-eye-with-line': !isHidden, 'icon-eye': isHidden}"
-          [style.font-size]="size === 'lg' ? '1.5rem' : ''"></span>
-        <i class="fa fa-fw" [ngClass]="{'fa-eye-slash': !isHidden, 'fa-eye': isHidden, 'fa-lg': size === 'lg'}"
-          *ngSwitchDefault></i>
-      </button>
-      <div *ngIf="!icon" class="input-group-text">
-        <input type="checkbox" class="" (click)="toggleShow($event)"
-          [attr.label]="isHidden ? 'Show password' : 'Hide password'">
-      </div>
-    </div>
-  `
+  template: "\n    <ng-content></ng-content>\n    <div class=\"input-group-append\">\n      <button *ngIf=\"icon\" class=\"btn btn-outline-secondary\" style=\"background:transparent;outline:none;\" type=\"button\" (click)=\"toggleShow($event)\"\n        [attr.label]=\"isHidden ? 'Show password' : 'Hide password'\" [ngSwitch]=\"icon\">\n        <span *ngSwitchCase=\"'entypo'\" class=\"icon\"\n          [ngClass]=\"{'icon-eye-with-line': !isHidden, 'icon-eye': isHidden}\"\n          [style.font-size]=\"size === 'lg' ? '1.5rem' : ''\"></span>\n        <i class=\"fa fa-fw\" [ngClass]=\"{'fa-eye-slash': !isHidden, 'fa-eye': isHidden, 'fa-lg': size === 'lg'}\"\n          *ngSwitchDefault></i>\n      </button>\n      <div *ngIf=\"!icon\" class=\"input-group-text\">\n        <input type=\"checkbox\" class=\"\" (click)=\"toggleShow($event)\"\n          [attr.label]=\"isHidden ? 'Show password' : 'Hide password'\">\n      </div>\n    </div>\n  "
 })
 export class ShowHidePasswordComponent implements OnInit {
   /**
@@ -60,12 +44,12 @@ export class ShowHidePasswordComponent implements OnInit {
     if (this.input) {
       this.renderer.addClass(this.elem.nativeElement, 'input-group');
       if (this.size === 'sm') {
-        this.renderer.addClass(this.elem.nativeElement, 'input-group-sm');
+        // this.renderer.addClass(this.elem.nativeElement, 'input-group-sm');
       } else if (this.size === 'lg') {
-        this.renderer.addClass(this.elem.nativeElement, 'input-group-lg');
+        // this.renderer.addClass(this.elem.nativeElement, 'input-group-lg');
       }
       this.isHidden = this.input.type === 'password';
-      this.renderer.addClass(this.input, 'form-control'); // just to be sure
+      // this.renderer.addClass(this.input, 'form-control'); // just to be sure
     } else {
       throw new Error(`No input element found. Please read the docs!`);
     }
